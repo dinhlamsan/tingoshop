@@ -1,28 +1,40 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TiNgoShop.Model.Abstract;
 
 namespace TiNgoShop.Model.Models
 {
     [Table("Orders")]
-    public class Order:Auditable
+    public class Order
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [MaxLength(250)]
+        [Required]
+        [MaxLength(256)]
         public string CustomerName { get; set; }
-        [MaxLength(250)]
+        [Required]
+        [MaxLength(256)]
         public string CustomerAddress { get; set; }
-        [MaxLength(250)]
+        [Required]
+        [MaxLength(256)]
         public string CustomerEmail { get; set; }
+        [Required]
         [MaxLength(50)]
         public string CustomerMobile { get; set; }
-        [MaxLength(250)]
+        [Required]
+        [MaxLength(256)]
         public string CustomerMessage { get; set; }
-        [MaxLength(250)]
+
+        [MaxLength(256)]
         public string PaymentMethod { get; set; }
-        [MaxLength(50)]
+
+        public DateTime? CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
         public string PaymentStatus { get; set; }
+        public bool Status { get; set; }
+        public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }
