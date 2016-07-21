@@ -49,7 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiNgoShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +65,13 @@
       <Project>{356ce02a-7184-4013-9219-399afebed800}</Project>
       <Name>TiNgoShop.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TiNgoShop.Model\TiNgoShop.Model.csproj">
+      <Project>{10252baf-78cd-4e0c-9b51-9e9a9ce7cc07}</Project>
+      <Name>TiNgoShop.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
