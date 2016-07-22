@@ -5,7 +5,7 @@
     {
         private readonly IDbFactory dbFactory;
         private TiNgoShopDbContext dbContext;
-
+        //Contructor
         public UnitOfWork(IDbFactory dbFactory)
         {
             this.dbFactory = dbFactory;

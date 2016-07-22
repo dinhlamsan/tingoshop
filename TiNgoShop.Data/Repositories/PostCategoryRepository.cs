@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCategoryRepository
     {
-        public PostCategoryRepository(DbFactory dbFactory)
+        public PostCategoryRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }
