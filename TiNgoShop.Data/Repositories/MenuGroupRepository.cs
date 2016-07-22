@@ -3,7 +3,7 @@ using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data.Repositories
 {
-    public interface IMenuGroupRepository { }
+    public interface IMenuGroupRepository : IRepository<MenuGroup> { }
 
     public class MenuGroupRepository : RepositoryBase<MenuGroup>, IMenuGroupRepository
     {

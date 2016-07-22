@@ -5,7 +5,7 @@ namespace TiNgoShop.Data.Repositories
 {
     public class ProductRepository : RepositoryBase<Product>
     {
-        public interface IProductRepository
+        public interface IProductRepository : IRepository<Product>
         {
             //Phương thức nghiệp vụ đặc thù không nằm trong RepositoryBase(nếu có) và cần kế thừa và inplement trong phương thức ProductRepository
         }

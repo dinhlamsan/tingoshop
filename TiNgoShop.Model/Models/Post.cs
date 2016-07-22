@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TiNgoShop.Model.Abstract;
 
@@ -37,6 +38,6 @@ namespace TiNgoShop.Model.Models
         [ForeignKey("CategoryId")]
         public virtual PostCategory PostCategories { set; get; }
 
-        //public virtual IEnumerable<PostTag> PostTags { set; get; }
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }

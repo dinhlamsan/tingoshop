@@ -3,7 +3,7 @@ using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data.Repositories
 {
-    public interface IFooterRespository
+    public interface IFooterRespository:IRepository<Footer>
     {
     }
 

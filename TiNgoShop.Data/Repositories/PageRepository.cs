@@ -3,7 +3,7 @@ using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data.Repositories
 {
-    public interface IPageRepository { }
+    public interface IPageRepository : IRepository<Page> { }
 
     public class PageRepository : RepositoryBase<Page>, IPageRepository
     {

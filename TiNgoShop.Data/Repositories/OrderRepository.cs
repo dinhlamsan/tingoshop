@@ -3,7 +3,7 @@ using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data.Repositories
 {
-    public interface IOrderRepository { }
+    public interface IOrderRepository : IRepository<Order> { }
 
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository
     {

@@ -3,7 +3,7 @@ using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data.Repositories
 {
-    public interface ITagRepository { }
+    public interface ITagRepository : IRepository<Tag> { }
 
     public class TagRepository : RepositoryBase<Tag>, ITagRepository
     {
