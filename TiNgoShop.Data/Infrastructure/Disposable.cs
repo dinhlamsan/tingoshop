@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TiNgoShop.Data.Infrastructure
 {
+    //Tự tắt đối tượng khi không dùng đến
     public class Disposable : IDisposable
     {
         private bool isDisposed;
@@ -31,7 +32,7 @@ namespace TiNgoShop.Data.Infrastructure
         }
 
         // Ovveride this to dispose custom objects
-        protected virtual void DisposeCore()
+        public virtual void DisposeCore()
         {
         }
     }
