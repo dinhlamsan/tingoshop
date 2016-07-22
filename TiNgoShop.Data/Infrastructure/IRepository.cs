@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 
 namespace TiNgoShop.Data.Infrastructure
 {
+    //Định nghĩa các class generic
     public interface IRepository<T> where T : class
     {
         // Marks an entity as new
