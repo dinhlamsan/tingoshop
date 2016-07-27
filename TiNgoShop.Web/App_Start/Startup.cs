@@ -1,15 +1,15 @@
-﻿using Microsoft.Owin;
+﻿using Autofac;
+using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
+using Microsoft.Owin;
 using Owin;
-using Autofac;
 using System.Reflection;
+using System.Web.Http;
+using System.Web.Mvc;
+using TiNgoShop.Data;
 using TiNgoShop.Data.Infrastructure;
 using TiNgoShop.Data.Repositories;
 using TiNgoShop.Service;
-using System.Web.Mvc;
-using System.Web.Http;
-using Autofac.Integration.Mvc;
-using Autofac.Integration.WebApi;
-using TiNgoShop.Data;
 
 [assembly: OwinStartup(typeof(TiNgoShop.Web.App_Start.Startup))]
 

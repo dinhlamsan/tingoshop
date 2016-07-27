@@ -13,8 +13,8 @@ namespace TiNgoShop.Service
 
     public class ErrorService : IErrorService
     {
-        private IErrorRepository _errorRepository;
-        private IUnitOfWork _unitOfWork;
+        IErrorRepository _errorRepository;
+        IUnitOfWork _unitOfWork;
 
         public ErrorService(IErrorRepository errorRepository, IUnitOfWork unitOfWork)
         {

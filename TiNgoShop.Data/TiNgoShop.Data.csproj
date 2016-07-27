@@ -56,13 +56,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201607220426255_InitialDB.cs" />
-    <Compile Include="Migrations\201607220426255_InitialDB.Designer.cs">
-      <DependentUpon>201607220426255_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607270351386_AddErrorTable.cs" />
-    <Compile Include="Migrations\201607270351386_AddErrorTable.Designer.cs">
-      <DependentUpon>201607270351386_AddErrorTable.cs</DependentUpon>
+    <Compile Include="Migrations\201607271409441_CreateDb.cs" />
+    <Compile Include="Migrations\201607271409441_CreateDb.Designer.cs">
+      <DependentUpon>201607271409441_CreateDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,7 +82,9 @@
     <Compile Include="TiNgoShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,11 +98,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607220426255_InitialDB.resx">
-      <DependentUpon>201607220426255_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607270351386_AddErrorTable.resx">
-      <DependentUpon>201607270351386_AddErrorTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607271409441_CreateDb.resx">
+      <DependentUpon>201607271409441_CreateDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

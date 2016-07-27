@@ -7,13 +7,13 @@ namespace TiNgoShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddErrorTable : IMigrationMetadata
+    public sealed partial class CreateDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddErrorTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607270351386_AddErrorTable"; }
+            get { return "201607271409441_CreateDb"; }
         }
         
         string IMigrationMetadata.Source
