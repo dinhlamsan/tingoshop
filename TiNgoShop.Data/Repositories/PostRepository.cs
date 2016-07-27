@@ -12,7 +12,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class PostRepository : RepositoryBase<Post>, IPostRepository
     {
-        public PostRepository(DbFactory dbFactory)
+        public PostRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

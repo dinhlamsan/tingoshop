@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class ProductTagRepository : RepositoryBase<ProductTag>, IProductTagRepository
     {
-        public ProductTagRepository(DbFactory dbFactory)
+        public ProductTagRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

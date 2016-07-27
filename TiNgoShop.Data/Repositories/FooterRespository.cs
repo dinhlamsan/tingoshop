@@ -9,7 +9,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class FooterRespository : RepositoryBase<Footer>, IFooterRespository
     {
-        public FooterRespository(DbFactory dbFactory)
+        public FooterRespository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class PageRepository : RepositoryBase<Page>, IPageRepository
     {
-        public PageRepository(DbFactory dbFactory)
+        public PageRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class MenuRespository : RepositoryBase<Menu>, IMenuRespository
     {
-        public MenuRespository(DbFactory dbFactory)
+        public MenuRespository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class SupportOnlineRepository : RepositoryBase<SupportOnline>, ISupportOnlineRepository
     {
-        public SupportOnlineRepository(DbFactory dbFactory)
+        public SupportOnlineRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

@@ -7,7 +7,7 @@ namespace TiNgoShop.Data.Repositories
 
     public class OrderDetailRepository : RepositoryBase<OrderDetail>, IOrderDetailRepository
     {
-        public OrderDetailRepository(DbFactory dbFactory)
+        public OrderDetailRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }

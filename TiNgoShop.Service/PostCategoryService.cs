@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TiNgoShop.Data.Infrastructure;
 using TiNgoShop.Data.Repositories;
 using TiNgoShop.Model.Models;
@@ -11,13 +12,15 @@ namespace TiNgoShop.Service
 
         void Update(PostCategory postCategory);
 
-        PostCategory Delete(int Id);
+        PostCategory Delete(int id);
 
         IEnumerable<PostCategory> GetAll();
 
-        IEnumerable<PostCategory> GetAllByParentId(int ParentId);
+        IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
-        PostCategory GetById(int Id);
+        PostCategory GetById(int id);
+
+        void Save();
     }
 
     public class PostCategoryService : IPostCategoryService
@@ -36,9 +39,9 @@ namespace TiNgoShop.Service
             return _postCategoryRepository.Add(postCategory);
         }
 
-        public PostCategory Delete(int Id)
+        public PostCategory Delete(int id)
         {
-            return _postCategoryRepository.Delete(Id);
+            return _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
@@ -46,14 +49,19 @@ namespace TiNgoShop.Service
             return _postCategoryRepository.GetAll();
         }
 
-        public IEnumerable<PostCategory> GetAllByParentId(int ParentId)
+        public IEnumerable<PostCategory> GetAllByParentId(int parentId)
         {
-            return _postCategoryRepository.GetMulti(s => s.Status && s.ParentId == ParentId);
+            return _postCategoryRepository.GetMulti(x => x.Status && x.ParentId == parentId);
         }
 
-        public PostCategory GetById(int Id)
+        public PostCategory GetById(int id)
         {
-            return _postCategoryRepository.GetSingleById(Id);
+            return _postCategoryRepository.GetSingleById(id);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
 
         public void Update(PostCategory postCategory)
