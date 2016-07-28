@@ -30,7 +30,7 @@ namespace TiNgoShop.UnitTest.RepositoryTest
             var result =objRepository.Add(category);
             unitOfWork.Commit();
             Assert.IsNotNull(result);
-            Assert.AreEqual(10, result.Id);
+            Assert.AreEqual(1, result.Id);
         }
         [TestMethod]
         public void PostCategory_Repository_GetAll()

@@ -1,10 +1,16 @@
-﻿using Microsoft.Owin;
+﻿using Autofac;
+using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
+using Microsoft.Owin;
 using Owin;
-using Autofac;
 using System.Reflection;
+using System.Web.Http;
+using System.Web.Mvc;
+using TiNgoShop.Data;
 using TiNgoShop.Data.Infrastructure;
 using TiNgoShop.Data.Repositories;
 using TiNgoShop.Service;
+<<<<<<< HEAD
 using System.Web.Mvc;
 using System.Web.Http;
 using Autofac.Integration.Mvc;
@@ -15,6 +21,8 @@ using Microsoft.AspNet.Identity;
 using TiNgoShop.Model.Models;
 using Microsoft.Owin.Security.DataProtection;
 using System.Web;
+=======
+>>>>>>> 20b2031112c9f003c29551cadcc491c79c452062
 
 [assembly: OwinStartup(typeof(TiNgoShop.Web.App_Start.Startup))]
 

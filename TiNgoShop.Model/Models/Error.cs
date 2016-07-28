@@ -9,7 +9,6 @@ namespace TiNgoShop.Model.Models
     {
         [Key]
         public int Id { get; set; }
-
         public string Message { set; get; }
         public string StackTrace { get; set; }
         public DateTime CreatedDate { get; set; }
