@@ -16,7 +16,7 @@ namespace TiNgoShop.Model.Models
         public string TagId { get; set; }
 
         [ForeignKey("PostId")]
-        public virtual Post Post { set; get; }
+        public virtual Post Posts { set; get; }
 
         [ForeignKey("TagId")]
         public virtual Tag Tags { set; get; }

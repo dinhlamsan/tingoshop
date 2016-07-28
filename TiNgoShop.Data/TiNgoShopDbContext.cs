@@ -1,9 +1,10 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using TiNgoShop.Model.Models;
 
 namespace TiNgoShop.Data
 {
-    public class TiNgoShopDbContext : DbContext
+    public class TiNgoShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public TiNgoShopDbContext() : base("TeduShopConnection")
         {
@@ -29,9 +30,14 @@ namespace TiNgoShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
+            builder.Entity<IdentityUserRole>().HasKey(i => i.UserId);
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+        }
+        public static TiNgoShopDbContext Create()
+        {
+            return new TiNgoShopDbContext();
         }
     }
 }

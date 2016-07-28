@@ -1,9 +1,13 @@
-﻿using System.Net;
+﻿using AutoMapper;
+using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using TiNgoShop.Model.Models;
 using TiNgoShop.Service;
 using TiNgoShop.Web.Infrastructure.Core;
+using TiNgoShop.Web.Infrastructure.Extensions;
+using TiNgoShop.Web.Models;
 
 namespace TiNgoShop.Web.Api
 {
@@ -24,15 +28,13 @@ namespace TiNgoShop.Web.Api
             return CreateHttpResponse(request, () =>
             {
                 var listCategory = _postCategoryService.GetAll();
-
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
-
-
+                var ListPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, ListPostCategoryVm);
                 return response;
             });
         }
-
-        public HttpResponseMessage Post(HttpRequestMessage request, PostCategory postCategory)
+        [Route("add")]
+        public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -43,7 +45,9 @@ namespace TiNgoShop.Web.Api
                 }
                 else
                 {
-                    var category = _postCategoryService.Add(postCategory);
+                    PostCategory newPostCategory = new PostCategory();
+                    newPostCategory.UpdatePostCategory(postCategoryVm);
+                    var category = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
@@ -52,8 +56,8 @@ namespace TiNgoShop.Web.Api
                 return response;
             });
         }
-
-        public HttpResponseMessage Put(HttpRequestMessage request, PostCategory postCategory)
+        [Route("update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -64,11 +68,11 @@ namespace TiNgoShop.Web.Api
                 }
                 else
                 {
-                    _postCategoryService.Update(postCategory);
+                    var postCategogyDb = _postCategoryService.GetById(postCategoryVm.Id);
+                    postCategogyDb.UpdatePostCategory(postCategoryVm);
+                    _postCategoryService.Update(postCategogyDb);
                     _postCategoryService.Save();
-
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
@@ -87,9 +91,7 @@ namespace TiNgoShop.Web.Api
                 {
                     _postCategoryService.Delete(id);
                     _postCategoryService.Save();
-
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });

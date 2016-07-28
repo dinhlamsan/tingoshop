@@ -7,9 +7,9 @@ namespace TiNgoShop.Data.Repositories
     {
     }
 
-    public class ErrorRespository : RepositoryBase<Error>, IErrorRepository
+    public class ErrorRepository : RepositoryBase<Error>, IErrorRepository
     {
-        public ErrorRespository(IDbFactory dbFactory)
+        public ErrorRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
         }
